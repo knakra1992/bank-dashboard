@@ -1,0 +1,47 @@
+<div class="side-nav">
+    <div class="side-nav-li-items">
+        <div class="side-nav-li">
+            <a>Air Index</a>
+        </div>
+        <div class="side-nav-li">
+            <a>Bank IFSC</a>
+        </div>
+        <div class="side-nav-li">
+            <a class="side-nav-li" routerLink="/login">Logout</a>
+        </div>
+    </div>
+</div>
+<div class="dashboard-header">
+    <a class="logout" routerLink="/login">Sign Out</a>
+</div>
+
+<div>
+    <button class="branch-button">Add to Branch</button>
+</div>
+
+<div class="dashboard-body">
+    <table>
+        <tr>
+            <th>Branch Name</th>
+            <th>IFSC Code</th>
+            <th>Bank</th>
+            <th>District</th>
+            <th>State</th>
+            <th>Action</th>
+        </tr>
+        <tr *ngFor="let data of bankInfo; let i = index">
+            <td>{{data.branchName}}</td>
+            <td>{{data.ifscCode}}</td>
+            <td>{{data.bank}}</td>
+            <td>{{data.district}}</td>
+            <td>{{data.state}}</td>
+            <td>
+                <button class="table-button" (click)="deleteRow(i)">Delete</button>
+            </td>
+        </tr>
+    </table>
+</div>
+<div class="paging">
+    <label class="space" (click)="backPage()">&lt;&lt; Back</label>
+    <label class="space" (click)="nextPage()">Next &gt;&gt;</label>
+</div>
