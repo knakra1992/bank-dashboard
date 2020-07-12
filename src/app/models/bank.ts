@@ -1,4 +1,5 @@
-export interface Bank {
+export class Bank {
+    id: number;
     branchName: string;
     ifscCode: string;
     bank: string;

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { AuthrorizationService } from '../auth/authrorization.service';
 
 @Component({
   selector: 'app-login-form',
@@ -8,13 +9,15 @@ import { Router } from '@angular/router';
 })
 export class LoginFormComponent implements OnInit {
 
-  constructor(public router: Router) { }
+  username: string;
+  password: string;
+
+  constructor(public router: Router, private _authSvc: AuthrorizationService) { }
 
   ngOnInit() {
   }
 
   authenticate(){
-    this.router.navigate(['/dashboard'])
+    this._authSvc.login(this.username, this.password);
   }
-
 }

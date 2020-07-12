@@ -1,20 +1,13 @@
-<div class="form">
-    <h1 class="header">
-        Enter Login Information
-    </h1>
-    <div class="top-space">
-        <label class="form-label">User Name</label>
+<form name="login" class="jumbotron container mt-5">
+    <div class="form-group">
+        <h3 for="exampleInputEmail1">Email address</h3>
+        <input name="username" [(ngModel)]="username" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
     </div>
-    <div>
-        <input class="input-box" type="text" placeholder="Enter Username">
+    <div class="form-group">
+        <h3 for="exampleInputPassword1">Password</h3>
+        <input name="password" [(ngModel)]="password" type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
     </div>
-    <div>
-        <label class="form-label">Password</label>
+    <div class="d-flex justify-content-center">
+        <button (click)="authenticate()" type="submit" class="btn btn-primary btn-lg">Sign In</button>
     </div>
-    <div class="bottom-space20">
-        <input class="input-box" type="password" placeholder="Enter Password">
-    </div>
-    <div class="bottom-space">
-        <button (click)="authenticate()" class="form-button">Login</button>
-    </div>
-</div>
+</form>
